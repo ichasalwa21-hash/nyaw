@@ -1,4 +1,9 @@
 /* --- Reset & Variable --- */
+<head>
+    <meta charset="UTF-8">
+    <title>Website Saya</title>
+    <link rel="stylesheet" href="style.css">
+</head>
 :root {
     --primary-color: #4f46e5;
     --primary-hover: #4338ca;
