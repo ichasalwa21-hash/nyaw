@@ -1,107 +1,117 @@
-// --- Responsive Mobile Navbar Toggle ---
+
 const menuToggle = document.getElementById('menu-toggle');
 const navMenu = document.getElementById('nav-menu');
 
-menuToggle.addEventListener('click', () => {
-    navMenu.classList.toggle('active');
-});
-
-// Close menu when a link is clicked
-document.querySelectorAll('.nav-link').forEach(link => {
-    link.addEventListener('click', () => {
-        navMenu.classList.remove('active');
+if (menuToggle && navMenu) {
+    menuToggle.addEventListener('click', () => {
+        navMenu.classList.toggle('active');
     });
-});
 
-// --- Data Simulasi Response AI ---
+    // Menutup menu seluler setelah link navigasi diklik
+    document.querySelectorAll('.nav-link').forEach(link => {
+        link.addEventListener('click', () => {
+            navMenu.classList.remove('active');
+        });
+    });
+}
+
 const aiResponses = {
-    jadwal: "🤖 Rekomendasi Jadwal AI:**<br>• 08:00 - Focus Work (Prioritas 1)<br>• 11:00 - Istirahat & Retrospeksi Tim<br>• 14:00 - Pengerjaan Tugas Rutin",
-    makan: "🥗 Saran Resep AI (Bahan Kulkas):<br>Salad Ayam Panggang + Dressing Wijen Sangrai. Sesuai dengan batas target 550 kalori harian Anda! ",
-    makan: "🥗 Saran Resep AI (Bahan Kulkas):<br>📋 Bahan-Bahan
-1. Ayam Panggang
-300 gram dada ayam fillet
+    jadwal: `
+        <div style="text-align: left; line-height: 1.7;">
+            <h4 style="color: #6366f1; margin-bottom: 10px; font-size: 1.1rem;">🗓️ Rekomendasi Jadwal Produktif Harian AI</h4>
+            <p style="margin-bottom: 10px; color: #64748b; font-size: 0.9rem;">
+                <i>Disusun berdasarkan siklus ritme sirkadian untuk fokus maksimal.</i>
+            </p>
+            <ul style="list-style: none; padding: 0;">
+                <li style="margin-bottom: 8px;"><b>08.00 - 10.30:</b> 🚀 <i>Deep Work Session</i> (Selesaikan tugas berat/analitis tanpa gangguan).</li>
+                <li style="margin-bottom: 8px;"><b>10.30 - 10.45:</b> ☕ <i>Short Break</i> (Lakukan peregangan fisik & hidrasi air putih).</li>
+                <li style="margin-bottom: 8px;"><b>11.00 - 12.30:</b> 📩 Rapat Tim & Respons Email / Komunikasi Penting.</li>
+                <li style="margin-bottom: 8px;"><b>12.30 - 13.30:</b> 🥗 Makan Siang Sehat & Istirahat Pemulihan Energi.</li>
+                <li style="margin-bottom: 8px;"><b>14.00 - 16.30:</b> 📝 Pengerjaan Tugas Rutin, Dokumentasi & Evaluasi Harian.</li>
+            </ul>
+        </div>
+    `,
+    
+    makan: `
+        <div style="text-align: left; line-height: 1.6;">
+            <h4 style="color: #ec4899; margin-bottom: 10px; font-size: 1.1rem;">🥗 Rekomendasi Resep AI: Salad Ayam Panggang Wijen</h4>
+            <p style="margin-bottom: 12px; color: #64748b; font-size: 0.85rem;">
+                <b>Estimasi Nutrisi:</b> ~480 Kalori | Protein: 38g | Karbohidrat: 18g | Lemak Sehat: 14g
+            </p>
+            
+            <h5 style="color: #1e293b; margin-bottom: 6px; font-size: 0.95rem;">🛒 Bahan-Bahan Utama:</h5>
+            <ul style="margin-bottom: 12px; padding-left: 20px; color: #334155;">
+                <li>200 gram dada ayam filleting (tanpa kulit)</li>
+                <li>1 genggam daun selada/romaine segar (cuci bersih dan potong)</li>
+                <li>1/2 buah timun Jepang (iris tipis)</li>
+                <li>5 buah tomat ceri (belah dua)</li>
+                <li>1/2 buah alpukat sedang (potong dadu)</li>
+                <li>1 sdm minyak zaitun / olive oil</li>
+                <li>Secukupnya garam, lada hitam, dan bubuk bawang putih</li>
+            </ul>
 
-1 sdm kecap asin
+            <h5 style="color: #1e293b; margin-bottom: 6px; font-size: 0.95rem;">🧴 Bahan Dressing Wijen:</h5>
+            <ul style="margin-bottom: 12px; padding-left: 20px; color: #334155;">
+                <li>2 sdm saus wijen sangrai (Roasted Sesame)</li>
+                <li>1 sdt kecap asin rendah natrium</li>
+                <li>1/2 sdt perasan jeruk nipis/lemon</li>
+            </ul>
 
-1 sdt minyak wijen
+            <h5 style="color: #1e293b; margin-bottom: 6px; font-size: 0.95rem;">👩‍🍳 Langkah Pembuatan:</h5>
+            <ol style="padding-left: 20px; color: #334155;">
+                <li style="margin-bottom: 5px;"><b>Marination:</b> Lumuri dada ayam dengan minyak zaitun, garam, lada hitam, dan bubuk bawang putih. Diamkan selama 10 menit.</li>
+                <li style="margin-bottom: 5px;"><b>Memanggang:</b> Panaskan teflon dengan api sedang. Panggang dada ayam selama 5–6 menit di setiap sisi hingga matang sempurna dan berwarna cokelat keemasan. Angkat, diamkan 2 menit, lalu iris tipis.</li>
+                <li style="margin-bottom: 5px;"><b>Penyajian:</b> Susun selada, timun, tomat ceri, dan alpukat di dalam mangkuk. Letakkan irisan ayam panggang di atasnya.</li>
+                <li style="margin-bottom: 5px;"><b>Finishing:</b> Siram dengan dressing wijen dan perasan lemon. Salad siap dinikmati!</li>
+            </ol>
+        </div>
+    `,
 
-1/2 sdt bubuk bawang putih (atau 1 siung bawang putih cincang)
-
-1/4 sdt garam dan merica bubuk
-
-2. Isian Salad
-100 gram daun selada (romaine/lettuce), cuci bersih dan potong-potong
-
-1 buah mentimun, potong dadu atau iris tipis
-
-1/2 buah wortel, potong korek api
-
-5 buah tomat ceri, belah dua
-
-1/2 buah jagung manis pipil (rebus matang)
-
-3. Dressing Wijen Sangrai
-3 sdm wijen putih (sangrai hingga harum dan berwarna keemasan)
-
-3 sdm mayones
-
-1 sdm kecap asin
-
-1 sdm cuka beras (bisa diganti 1 sdt perasan jeruk nipis/lemon)
-
-1 sdt minyak wijen
-
-1 sdt madu atau gula pasir
-
-1–2 sdm air hangat (untuk menyesuaikan kekentalan)
-
-🥣 Cara Membuat
-Langkah 1: Panggang Ayam
-Marinasi dada ayam dengan kecap asin, minyak wijen, bubuk bawang putih, garam, dan merica. Diamkan selama 15–20 menit di dalam kulkas.
-
-Panaskan wajan anti-lengket (pan) dengan sedikit minyak/mentega dengan api sedang.
-
-Panggang dada ayam hingga matang dan berwarna kecokelatan di kedua sisinya (sekitar 5–7 menit tiap sisi).
-
-Angkat, diamkan sebentar, lalu potong-potong atau iris tipis (slice).
-
-Langkah 2: Buat Dressing Wijen Sangrai
-Haluskan sebagian besar wijen yang sudah disangrai menggunakan ulekan atau blender (sisakan sedikit wijen utuh untuk taburan).
-
-Campurkan wijen halus dengan mayones, kecap asin, perasan jeruk nipis/cuka, minyak wijen, dan madu.
-
-Aduk rata. Jika dressing terlalu kental, tambahkan 1–2 sdm air hangat hingga mencapai tekstur yang diinginkan.
-
-Langkah 3: Penyajian
-Susun daun selada, mentimun, wortel, tomat ceri, dan jagung manis di dalam mangkuk saji.
-
-Letakkan irisan ayam panggang di atas sayuran.
-
-Siram dengan Dressing Wijen Sangrai dan taburi dengan sisa wijen sangrai utuh di atasnya.
-
-Salad siap dinikmati!
-
-💡 Tips Tambahan:
-
-Anda bisa menambahkan topping renyah seperti crouton (roti panggang dadu) atau kacang almond sangrai.
-
-Pastikan sayuran salad disajikan dalam keadaan dingin dan benar-benar kering setelah dicuci agar rasa dressing tidak menjadi hambar/encer. ",
-    hemat: "💡 Tips Keuangan AI:**<br>Pengeluaran kopi bulanan Anda terdeteksi melampaui estimasi 15%. Coba seduh kopi sendiri 2x seminggu untuk hemat Rp 200.000/bulan!"
+    hemat: `
+        <div style="text-align: left; line-height: 1.7;">
+            <h4 style="color: #10b981; margin-bottom: 10px; font-size: 1.1rem;">💡 Rencana Strategi Keuangan Harian AI</h4>
+            <p style="margin-bottom: 10px; color: #64748b; font-size: 0.9rem;">
+                <i>Hasil analisis pengeluaran harian dan potensi penghematan bulanan Anda.</i>
+            </p>
+            <ul style="list-style: none; padding: 0;">
+                <li style="margin-bottom: 10px;">
+                    <b>1. Evaluasi Kopi & Jajanan Ringan:</b><br>
+                    <span style="color: #475569; font-size: 0.9rem;">Pengeluaran jajanan Anda terdeteksi Rp 35.000/hari. Beralih menyeduh sendiri di kantor 3x seminggu dapat menghemat hingga <b>Rp 420.000/bulan</b>.</span>
+                </li>
+                <li style="margin-bottom: 10px;">
+                    <b>2. Optimalisasi Langganan Digital:</b><br>
+                    <span style="color: #475569; font-size: 0.9rem;">Terdapat 2 layanan streaming paralel yang jarang diakses secara bersamaan. Batalkan salah satu untuk menghemat <b>Rp 65.000/bulan</b>.</span>
+                </li>
+                <li style="margin-bottom: 10px;">
+                    <b>3. Aturan Alokasi 50/30/20:</b><br>
+                    <span style="color: #475569; font-size: 0.9rem;">Pastikan 50% pendapatan untuk Kebutuhan Pokok, 30% Keinginan, dan minimal 20% langsung masuk ke Rekening Tabungan/Investasi Otomatis.</span>
+                </li>
+            </ul>
+        </div>
+    `
 };
 
-// --- Interactive Demo Handler ---
+
 function getAISuggestion(type) {
-    const demoOutput = document.getElementById('demo-text');
+    const demoText = document.getElementById('demo-text');
     const buttons = document.querySelectorAll('.demo-btn');
 
-    // Update state tombol aktif
-    buttons.forEach(btn => btn.classList.remove('active'));
-    event.target.classList.add('active');
+    if (!demoText) return;
 
-    // Efek loading simpel
-    demoOutput.innerHTML = "⏳ <i>AI sedang berpikir dan menganalisis...</i>";
+
+    buttons.forEach(btn => btn.classList.remove('active'));
+    if (event && event.currentTarget) {
+        event.currentTarget.classList.add('active');
+    }
+
+    demoText.innerHTML = `
+        <div style="padding: 20px; color: #6366f1;">
+            <span style="display: inline-block; animation: pulse 1s infinite;">⚙️</span> 
+            <i>AI sedang menyusun data lengkap untuk Anda...</i>
+        </div>
+    `;
 
     setTimeout(() => {
-        demoOutput.innerHTML = aiResponses[type] || "Silakan pilih salah satu opsi.";
-    }, 600);
+        demoText.innerHTML = aiResponses[type] || "<p>Data tidak ditemukan.</p>";
+    }, 500);
 }
