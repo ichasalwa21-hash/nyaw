@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AILife - Solusi Digital Cerdas Hari Ini</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Header / Navbar -->
+    <header class="navbar">
+        <div class="container nav-container">
+            <a href="#" class="logo">
+                <i class="fa-solid fa-brain"></i> AI<span>Life</span>
+            </a>
+            <nav class="nav-menu" id="nav-menu">
+                <a href="#hero" class="nav-link">Beranda</a>
+                <a href="#fitur" class="nav-link">Solusi Kami</a>
+                <a href="#demo" class="nav-link">Coba Demo</a>
+                <a href="#kontak" class="nav-link">Kontak</a>
+            </nav>
+            <div class="nav-actions">
+                <a href="#demo" class="btn btn-primary">Mulai Gratis</a>
+                <button class="menu-toggle" id="menu-toggle" aria-label="Toggle Menu">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="hero">
+        <div class="container hero-container">
+            <div class="hero-content">
+                <span class="badge"><i class="fa-solid fa-sparkles"></i> Masa Depan Produktivitas</span>
+                <h1>Solusi AI Cerdas untuk <br><span class="highlight">Kehidupan Sehari-hari</span></h1>
+                <p>Permudah rutinitas harian Anda mulai dari manajemen waktu, asistensi pekerjaan, hingga rekomendasi gaya hidup sehat dengan kekuatan Kecerdasan Artifisial.</p>
+                <div class="hero-buttons">
+                    <a href="#demo" class="btn btn-primary btn-large">Coba AI Sekarang <i class="fa-solid fa-arrow-right"></i></a>
+                    <a href="#fitur" class="btn btn-secondary btn-large">Pelajari Fitur</a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <div class="glass-card main-card">
+                    <i class="fa-solid fa-robot card-icon"></i>
+                    <h3>AI Assistant Ready</h3>
+                    <p>Bagaimana saya bisa membantu jadwal harian Anda hari ini?</p>
+                </div>
+                <div class="glass-card floating-card-1">
+                    <i class="fa-solid fa-check-circle"></i> Jadwal Tersusun Otomatis
+                </div>
+                <div class="glass-card floating-card-2">
+                    <i class="fa-solid fa-bolt"></i> Efisiensi +300%
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Fitur / Solusi Section -->
+    <section class="features" id="fitur">
+        <div class="container">
+            <div class="section-title">
+                <h2>Solusi Digital Serba Bisa</h2>
+                <p>Teknologi AI yang dirancang sederhana untuk mempermudah berbagai aktivitas Anda.</p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="icon-wrapper"><i class="fa-solid fa-calendar-check"></i></div>
+                    <h3>Manajemen Waktu Cerdas</h3>
+                    <p>AI menganalisis prioritas tugas Anda dan menyusun jadwal harian secara otomatis tanpa bentrok.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="icon-wrapper"><i class="fa-solid fa-utensils"></i></div>
+                    <h3>Rencana Nutrisi & Resep</h3>
+                    <p>Dapatkan rekomendasi menu makanan harian berdasarkan sisa bahan di kulkas dan target kesehatan Anda.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="icon-wrapper"><i class="fa-solid fa-wallet"></i></div>
+                    <h3>Pengelola Keuangan Harian</h3>
+                    <p>Catat pengeluaran lewat obrolan santai dan biarkan AI menganalisis pola hemat harian Anda.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive Demo Section -->
+    <section class="demo" id="demo">
+        <div class="container">
+            <div class="demo-box">
+                <div class="demo-header">
+                    <h3>Simulasi Asisten AI Harian</h3>
+                    <p>Pilih topik di bawah ini untuk melihat contoh respon instant dari AI:</p>
+                </div>
+                <div class="demo-buttons">
+                    <button class="demo-btn active" onclick="getAISuggestion('jadwal')">🗓️ Jadwal Harian</button>
+                    <button class="demo-btn" onclick="getAISuggestion('makan')">🥗 Menu Makan Siang</button>
+                    <button class="demo-btn" onclick="getAISuggestion('hemat')">💡 Tips Hemat Hari Ini</button>
+                </div>
+                <div class="demo-output" id="demo-output">
+                    <i class="fa-solid fa-spinner fa-spin loading-icon" id="loading" style="display: none;"></i>
+                    <p id="demo-text">Klik salah satu tombol di atas untuk melihat bagaimana AI memproses permintaan Anda secara langsung!</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer" id="kontak">
+        <div class="container footer-container">
+            <div class="footer-info">
+                <a href="#" class="logo text-white">
+                    <i class="fa-solid fa-brain"></i> AI<span>Life</span>
+                </a>
+                <p>Menghadirkan kenyamanan kecerdasan buatan ke dalam setiap aspek kehidupan harian Anda.</p>
+            </div>
+            <div class="footer-links">
+                <h4>Navigasi</h4>
+                <ul>
+                    <li><a href="#hero">Beranda</a></li>
+                    <li><a href="#fitur">Fitur</a></li>
+                    <li><a href="#demo">Demo</a></li>
+                </ul>
+            </div>
+            <div class="footer-social">
+                <h4>Ikuti Kami</h4>
+                <div class="social-icons">
+                    <a href="#"><i class="fa-brands fa-github"></i></a>
+                    <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                    <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 AILife. Dipublikasikan dengan GitHub Pages.</p>
+        </div>
+    </footer>
+
+    <!-- Custom JS -->
+    <script src="script.js"></script>
+</body>
+</html>
